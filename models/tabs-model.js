@@ -31,17 +31,17 @@ module.exports = {
 };
 
 function get() {
-  return db('habits');
+  return db('tabs');
 }
 
 function getById(id) {
-  return db('habits')
+  return db('tabs')
     .where({ id })
     .first();
 }
 
 function insert(habit) {
-  return db('habits')
+  return db('tabs')
     .insert(habit)
     .then(ids => {
       return getById(ids[0]);
