@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
         tbl.string('tab')
           .notNullable()
         tbl.string('description', 200)
-        .notNullable()
+        // .notNullable()
         tbl.integer('user_id')
             .notNullable()
             .references('id')
