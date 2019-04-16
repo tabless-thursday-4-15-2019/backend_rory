@@ -1,4 +1,3 @@
-
 exports.up = function(knex, Promise) {
     return knex.schema
 
@@ -19,12 +18,10 @@ exports.up = function(knex, Promise) {
         users // phone
         .string('phone', 128)
         .notNullable();
-      })
-      
+      })    
 };
 
 exports.down = function(knex, Promise) {
     return knex.schema
     .dropTableIfExists('users');
 };
-
