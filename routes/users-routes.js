@@ -53,18 +53,18 @@ router.post('/login', (req, res) => {
   
 });
 
-// Got rid of these bc it gives access to all users
-// router.get('/:id', (req, res) => {
-//     const { id } = req.params
-//     Users
-//     .getUser(id)
-//     .then(user => {
-//         res.status(200).json(user);
-//     })
-//     .catch(error => {
-//         res.status(500).json(error);
-//     })
-// })
+
+router.get('/:id', (req, res) => {
+    const { id } = req.params
+    Users
+    .getUser(id)
+    .then(user => {
+        res.status(200).json(user);
+    })
+    .catch(error => {
+        res.status(500).json(error);
+    })
+})
 
 router.get('/:id/tabs', authenticate, (req, res) => {
     const id = req.params.id
