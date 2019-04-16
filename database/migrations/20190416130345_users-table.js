@@ -15,9 +15,9 @@ exports.up = function(knex, Promise) {
           .string('password', 128)
           .notNullable();
 
-        users // phone
-        .string('phone', 128)
-        .notNullable();
+        // users // phone
+        // .string('phone', 128)
+        // .notNullable();
       })    
 };
 
