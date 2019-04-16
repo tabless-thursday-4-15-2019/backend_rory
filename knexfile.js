@@ -1,11 +1,11 @@
 // Update with your config settings.
-// const localPg = {
-//   host: 'localhost',
-//   database: 'tabs',
-//   user: 'tabber',
-//   password: 'pass'
-// }
-// const productionDbConnection = process.env.DATABASE_URL || localPg;
+const localPg = {
+  host: 'localhost',
+  database: 'tabs',
+  user: 'tabber',
+  password: 'pass'
+}
+const productionDbConnection = process.env.DATABASE_URL || localPg;
 
 module.exports = {
   development: {
@@ -26,14 +26,14 @@ module.exports = {
       directory: './database/seeds',
     },
   },
-  // production: {
-  //   client: 'pg',
-  //   connection: productionDbConnection,
-  //   migrations: {
-  //     directory: './database/migrations',
-  //   },
-  //   seeds: {
-  //     directory: './database/seeds',
-  //   },
-  // }
+  production: {
+    client: 'pg',
+    connection: productionDbConnection,
+    migrations: {
+      directory: './database/migrations',
+    },
+    seeds: {
+      directory: './database/seeds',
+    },
+  }
 };
