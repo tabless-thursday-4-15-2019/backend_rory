@@ -17,12 +17,13 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 
-server.use('/api/tabs', tabsRouter);
-server.use('/api/users', usersRouter);
+server.use('/tabs', tabsRouter);
+server.use('/users', usersRouter);
 
 server.get('/', (req, res) => {
   res.send('Welcome to the Jungle 🌴');
 });
+
 
 server.post('/register', (req, res) => {
     console.log(req.body)

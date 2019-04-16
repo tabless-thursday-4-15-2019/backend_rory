@@ -1,25 +1,4 @@
-// const db = require('../database/dbConfig');
 
-// module.exports = {
-//     getHabits,
-//     addHabit,
-
-// };
-
-// function getHabits() {
-//     return db('habits')
-
-// }
-
-// function addHabit(habit) {
-//     return db('habits')
-//     .insert(habit)
-//     .then(ids => {
-//         return getHabits(ids[0])
-//     });
-// }
-
-///////////////
 const db = require('../database/dbConfig');
 
 module.exports = {
@@ -49,13 +28,13 @@ function insert(habit) {
 }
 
 function update(id, changes) {
-  return db('habits')
+  return db('tabs')
     .where({ id })
     .update(changes);
 }
 
 function remove(id) {
-  return db('habits')
+  return db('tabs')
     .where('id', id)
     .del();
 }

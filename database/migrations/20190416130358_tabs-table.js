@@ -3,6 +3,8 @@ exports.up = function(knex, Promise) {
         tbl.increments();
         tbl.string('tab')
           .notNullable()
+        tbl.string('description', 200)
+        .notNullable()
         tbl.integer('user_id')
             .notNullable()
             .references('id')
