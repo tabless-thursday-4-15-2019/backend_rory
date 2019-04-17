@@ -9,6 +9,7 @@ module.exports = {
 function addUser(user) {
     return db('users')
     .insert(user)
+    .returning("id")
     .then(ids => {
         return getUser(ids[0]);
     })

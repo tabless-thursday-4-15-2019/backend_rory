@@ -4,7 +4,7 @@ const db = require('../database/dbConfig');
 module.exports = {
   get,
   getById,
-  insert,
+  addTab,
   update,
   remove,
 };
@@ -19,12 +19,13 @@ function getById(id) {
     .first();
 }
 
-function insert(habit) {
+function addTab(tab) {
   return db('tabs')
-    .insert(habit)
-    .then(ids => {
-      return getById(ids[0]);
-    });
+    .insert(tab)
+    .returning("id")
+    // .then(ids => {
+    //   return getById(ids[0]);
+    // });
 }
 
 function update(id, changes) {

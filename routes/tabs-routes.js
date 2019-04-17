@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
+const Tabs = require('../models/tabs-model')
+
 const db = require('../database/dbConfig')
 
 const { authenticate } = require('../auth/authenticate');
 
 // Tab Routes
 router.post('/', authenticate,  (req, res) => { 
-    db('tabs')
-    .insert(req.body)
+  Tabs
+    .addTab(req.body)
     .then(id => {
         res.status(201).json(id)
     })
