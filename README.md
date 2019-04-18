@@ -1,4 +1,4 @@
-# backend_rory
+Backend for Stash.It Build Week Application
 
 | Method       | Enpoint           | Action  | Front-end Request | Backend Response
 | ------------- |:-------------:| -----:|:-------------:|:-------------:|
