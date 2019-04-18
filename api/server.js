@@ -21,7 +21,7 @@ server.use('/tabs', tabsRouter);
 server.use('/users', usersRouter);
 
 server.get('/', (req, res) => {
-  res.send('Welcome to the Jungle 🌴');
+     res.status(200).json({ message: 'Welcome'})
 });
 
 
@@ -72,52 +72,3 @@ server.post('/login', (req, res) => {
 
 module.exports = server;
 
-
-
-// users-table migrations
-
-// exports.up = function(knex, Promise) {
-//     return knex.schema
-
-//     // Users Table
-//     .createTable('users', users => {
-//         users // user_id
-//           .increments();
-
-//         users // username
-//           .string('username', 128)
-//           .notNullable()
-//           .unique();
-
-//         users // password
-//           .string('password', 128)
-//           .notNullable();
-
-//         users // phone
-//         .string('phone', 128)
-//         .notNullable();
-//       })    
-// };
-
-// exports.down = function(knex, Promise) {
-//     return knex.schema
-//     .dropTableIfExists('users');
-// };
-
-//tabs-table 
-//
-// exports.up = function(knex, Promise) {
-//     return knex.schema.createTable('tabs', function(tbl) {
-//         tbl.increments();
-//         tbl.string('tab')
-//           .notNullable()
-//         tbl.integer('user_id')
-//             .notNullable()
-//             .references('id')
-//             .inTable('users')
-//     }) 
-// };
-
-// exports.down = function(knex, Promise) {
-//     return knex.schema.dropTableIfExists('tabs');
-// };

@@ -28,7 +28,7 @@ router.get('/', authenticate, (req, res) => {
 })
 
 // router.get('/:id', authenticate, (req, res) => {
-router.get('/:id', (req, res) => {
+router.get('/:id', authenticate, (req, res) => {
     const { id } = req.params;
     db('tabs')
     .where({ id })
